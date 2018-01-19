@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="text-center">
+    <h2><%= @presenter.total %> BestBuys within <%= @presenter.distance %> of <%= @presenter.zipcode %></h2>
+    <br>
+  </div>
+  <table width="100%" class="table-hover">
+    <tr>
+      <thead class="thead-inverse">
+        <th>distance</th><th>type</th><th>name</th><th>address</th><th>city</th><th>region</th>
+      </thead>
+    </tr>
+    <tbody>
+      <% @presenter.stores.sort {|store| store.distance} %>
+      <% @presenter.stores.each do |store| %>
+        <tr>
+          <td><%= store.distance %></td>
+          <td><%= store.type %></td>
+          <td><%= store.name %></td>
+          <td><%= store.address %></td>
+          <td><%= store.city %></td>
+          <td><%= store.region %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <div class="text-center">
+    <a href="/">Return to Search</a>
+  </div>
+</div>

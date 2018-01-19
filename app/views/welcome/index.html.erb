@@ -1,0 +1,14 @@
+<div class="container text-center">
+<div class="jumbotron"%>
+<h1>BestBuy Search</h1>
+</div>
+<br><br><br><br>
+<h1>Enter Zipcode and Distance</h1>
+<%= form_for :search, url: '/search' do |t| %>
+  <%= t.label :zipcode %>
+  <%= t.text_field :zipcode %>
+  <%= t.label :distance %>
+  <%= t.text_field :distance %>
+  <%= t.submit "Submit" %>
+<% end %>
+</div>
